@@ -1,1 +1,3 @@
-# bash
+# Learning Bash
+
+...go to the wiki!
