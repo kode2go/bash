@@ -194,7 +194,7 @@ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
 ```
 
 
-### Automation - Loops & Scripts
+### Automation - Control, Loops & Scripts
 
 Loops:
 
