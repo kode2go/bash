@@ -92,8 +92,6 @@ ctrl + c
 
 `alias c = “clear”`
 
-
-
 ### Basics 4:
 
 `>`
@@ -101,5 +99,78 @@ ctrl + c
 `|`
 
 
+### Basics 5
+
+Wildcards: 
+* is a wildcard, which represents zero or more other characters
+? is also a wildcard, but it represents exactly one character.
+
+### Exercise 1
+
+Create the following files and folder structure:
+
+```
+.
+├── 2015-10-23-calibration.txt
+├── 2015-10-23-dataset1.txt
+├── 2015-10-23-dataset2.txt
+├── 2015-10-23-dataset_overview.txt
+├── 2015-10-26-calibration.txt
+├── 2015-10-26-dataset1.txt
+├── 2015-10-26-dataset2.txt
+├── 2015-10-26-dataset_overview.txt
+├── 2015-11-23-calibration.txt
+├── 2015-11-23-dataset1.txt
+├── 2015-11-23-dataset2.txt
+├── 2015-11-23-dataset_overview.txt
+├── backup
+│   ├── calibration
+│   └── datasets
+└── send_to_bob
+    ├── all_datasets_created_on_a_23rd
+    └── all_november_files
+```
+
+Folders:
+
+```
+mkdir -p backup/calibration
+mkdir -p backup/datasets
+mkdir -p send_to_bob/all_datasets_created_on_a_23rd
+mkdir -p send_to_bob/all_november_files
+```
+
+Note that `-p` creates parent directory
+
+Files:
+
+```
+touch 2015-10-23-{calibration,dataset{1,2},dataset_overview}.txt 
+touch 2015-10-26-{calibration,dataset{1,2},dataset_overview}.txt 
+touch 2015-11-23-{calibration,dataset{1,2},dataset_overview}.txt
+
+```
+
+View with `ls -Rl`
+
+Copy all dataset files to backup/datasets:
+`cp *dataset* backup/datasets`
+
+Copy all calibration to backup/calibration:
+Mistake copy to datasets:
+`cp *calibration* backup/datasets`
+`cp *calibration* backup/calibration`
+
+Cant us `rm` too easily to delete, rather use find. First find the files:
+
+```
+
+find . -name "*calibration*"
+find . -type f -name "*calibration*"
+find backup/datasets -type f -name "*calibration*" 
+find backup/datasets -type f -name "*calibration*" -delete
+find backup/datasets -type f -name "*calibration*" 
+
+```
 
 ...go to the wiki!
