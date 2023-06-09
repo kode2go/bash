@@ -94,7 +94,19 @@ ctrl + c
 
 ### Basics 4:
 
+```
+history | tail
+
+history > backup.txt
+
+history >> backup.txt
+
+echo "text" >> backup.txt
+```
+
 `>`
+
+`>>`
 
 `|`
 
@@ -153,10 +165,10 @@ touch 2015-11-23-{calibration,dataset{1,2},dataset_overview}.txt
 
 View with `ls -Rl`
 
-Copy all dataset files to backup/datasets:
+1. Copy all dataset files to backup/datasets:
 `cp *dataset* backup/datasets`
 
-Copy all calibration to backup/calibration:
+2. Copy all calibration to backup/calibration:
 Mistake copy to datasets:
 `cp *calibration* backup/datasets`
 `cp *calibration* backup/calibration`
@@ -172,5 +184,51 @@ find backup/datasets -type f -name "*calibration*" -delete
 find backup/datasets -type f -name "*calibration*" 
 
 ```
+
+
+Copy data to `send_to_bob` folder:
+
+```
+cp 2015-11-* send_to_bob/all_november_files/
+cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
+```
+
+
+### Loops Lesson
+
+Input list of 5 numbers into all the dataset files, for example:
+100
+59
+22
+33
+22
+
+```
+or something like this
+
+```
+echo $RANDOM >> text.txt; echo $RANDOM >> text.txt; echo $RANDOM >> text.txt; echo $RANDOM >> text.txt; echo $RANDOM >> text.txt
+```
+
+```
+for var in {1..5}; do echo $RANDOM >> text2.txt; done
+```
+
+View first two and last line of files:
+```
+head -n 2 text.txt
+```
+
+```
+for file in *.txt
+> do
+>     echo $file
+>     head -n 2 $file
+> done
+```
+
+### Exercise 3
+
+Cron job that reads cpu specs and stores in a file
 
 ...go to the wiki!
