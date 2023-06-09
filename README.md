@@ -194,7 +194,9 @@ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
 ```
 
 
-### Loops Lesson
+### Automation - Loops & Scripts
+
+Loops:
 
 Input list of 5 numbers into all the dataset files, for example:
 100
