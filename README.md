@@ -24,6 +24,9 @@ Move inside a directory (one level down)
 Move outside a directory (one level up)
 `cd ..`:
 
+Move forward a directory (one level down)
+`cd -`:
+
 Move oustide a directory (two levels up)
 `cd ../..`:
 
