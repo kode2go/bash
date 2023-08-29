@@ -1,5 +1,7 @@
 # Learning Bash
 
+Reference: https://swcarpentry.github.io/shell-novice/
+
 ## Windows
 
 ### Basics 1
